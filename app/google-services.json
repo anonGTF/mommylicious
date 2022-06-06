@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "522503100151",
+    "project_id": "mommylicious-df0cd",
+    "storage_bucket": "mommylicious-df0cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522503100151:android:e2d6336e1fdc749be665f2",
+        "android_client_info": {
+          "package_name": "com.mommylicious.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522503100151-07l11icp4licf06etg1u7q49vb3mg7t9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCebw1iO3NxHoEDAeMzpMDfMynVWKJ4Ij4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522503100151-07l11icp4licf06etg1u7q49vb3mg7t9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

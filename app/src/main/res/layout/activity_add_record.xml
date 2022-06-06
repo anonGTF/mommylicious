@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.record.AddRecordActivity">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:contentInsetLeft="0dp"
+        android:contentInsetStart="0dp"
+        android:elevation="1dp"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Tambah Pertumbuhan Anak"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </Toolbar>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tf_birthdate"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:startIconDrawable="@drawable/ic_calendar"
+        app:hintEnabled="false"
+        app:boxStrokeColor="@color/stroke_color"
+        app:boxBackgroundColor="@color/border">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tanggal Pengukuran"
+            android:clickable="true"
+            android:focusableInTouchMode="false"
+            android:inputType="text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tf_height"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:startIconDrawable="@drawable/ic_height"
+        app:hintEnabled="false"
+        app:boxStrokeColor="@color/stroke_color"
+        app:boxBackgroundColor="@color/border">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tinggi Anak (cm)"
+            android:inputType="numberDecimal"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tf_weight"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:startIconDrawable="@drawable/ic_weight"
+        app:hintEnabled="false"
+        app:boxStrokeColor="@color/stroke_color"
+        app:boxBackgroundColor="@color/border">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Berat Badan (kg)"
+            android:inputType="numberDecimal"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tf_head"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:startIconDrawable="@drawable/ic_faces"
+        app:hintEnabled="false"
+        app:boxStrokeColor="@color/stroke_color"
+        app:boxBackgroundColor="@color/border">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Lingkar Kepala (cm)"
+            android:inputType="numberDecimal"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_add_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:lineSpacingExtra="8sp"
+        android:background="@drawable/gradient_purple"
+        android:textSize="16sp"
+        android:text="Tambah"
+        android:textStyle="bold"
+        android:textAllCaps="false"
+        app:backgroundTint="@null"
+        app:cornerRadius="24dp"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone"
+        android:elevation="10dp"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
