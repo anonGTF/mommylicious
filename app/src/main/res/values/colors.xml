@@ -17,4 +17,8 @@
     <color name="blue_200">#9DCEFF</color>
     <color name="purple_100">#C58BF2</color>
     <color name="pink_300">#EEA4CE</color>
+    <color name="gray_100">#F7F8F8</color>
+    <color name="gray_200">#DDDADA</color>
+    <color name="gray_300">#ADA4A5</color>
+    <color name="gray_400">#7B6F72</color>
 </resources>
