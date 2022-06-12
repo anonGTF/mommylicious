@@ -8,12 +8,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.observe
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.mommylicious.mobile.R
 import com.mommylicious.mobile.base.BaseFragment
+import com.mommylicious.mobile.data.model.Child
 import com.mommylicious.mobile.data.model.User
 import com.mommylicious.mobile.databinding.FragmentProfileBinding
 import com.mommylicious.mobile.ui.auth.LoginActivity
 import com.mommylicious.mobile.ui.child.AddChildActivity
+import com.mommylicious.mobile.ui.child.DetailChildActivity
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,11 +26,15 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentProfileBinding
         = FragmentProfileBinding::inflate
+
+    private lateinit var childAdapter: ChildAdapter
     private val viewModel: ProfileViewModel by activityViewModels()
     private var data: User? = null
 
     override fun setup() {
+        setupRecyclerView()
         viewModel.getProfile().observe(viewLifecycleOwner, setProfileObserver())
+        viewModel.getChildren().observe(viewLifecycleOwner, setChildrenObserver())
 
 //        binding.btnEditProfil.setOnClickListener {
 //            val intent = Intent(binding.root.context, EditProfileActivity::class.java)
@@ -40,6 +48,24 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
         binding.btnLogout.setOnClickListener {
             viewModel.logout().observe(viewLifecycleOwner, setLogoutObserver())
+        }
+    }
+
+    private fun setChildrenObserver() = setObserver<List<Child>?>(
+        onSuccess = {
+            childAdapter.differ.submitList(it.data)
+        }
+    )
+
+    private fun setupRecyclerView() {
+        childAdapter = ChildAdapter()
+        with(binding.rvChildren) {
+            adapter = childAdapter
+            layoutManager = LinearLayoutManager(binding.root.context)
+        }
+
+        childAdapter.setOnItemClickListener {
+            DetailChildActivity.startActivity(requireActivity(), it.childId)
         }
     }
 

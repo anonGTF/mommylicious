@@ -3,28 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/drawable/back_button_background.xml" value="0.2855" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/drawable/gradient_blue.xml" value="0.277" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/drawable/ic_arrow_left.xml" value="0.2855" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/drawable/ic_chevron_right.xml" value="0.277" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/drawable/ic_faces.xml" value="0.277" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/drawable/ic_person.xml" value="0.277" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/activity_achievement_list.xml" value="0.24456521739130435" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/activity_add_child.xml" value="0.24456521739130435" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/activity_add_record.xml" value="0.5" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/activity_detail_child.xml" value="0.2" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/activity_detail_menu.xml" value="0.24456521739130435" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/activity_login.xml" value="0.24456521739130435" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/activity_main.xml" value="0.24456521739130435" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/activity_register.xml" value="0.24456521739130435" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/fragment_nutrition_list.xml" value="0.24456521739130435" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/fragment_profile.xml" value="0.24456521739130435" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/item_article.xml" value="0.24456521739130435" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/item_child.xml" value="0.67" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/item_gender.xml" value="0.24456521739130435" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/item_menu.xml" value="0.24456521739130435" />
-        <entry key="..\:/Kuliah/Proyek/mommylicious/app/src/main/res/layout/item_need.xml" value="0.24456521739130435" />
+        <entry key="..\:/Users/Lenovo/Documents/programming/android/Mommylicious/app/src/main/res/layout/activity_detail_article.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/Documents/programming/android/Mommylicious/app/src/main/res/layout/activity_detail_child.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/Documents/programming/android/Mommylicious/app/src/main/res/layout/activity_detail_menu.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/Documents/programming/android/Mommylicious/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/Documents/programming/android/Mommylicious/app/src/main/res/layout/item_article.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/Documents/programming/android/Mommylicious/app/src/main/res/layout/item_child.xml" value="0.25" />
+        <entry key="..\:/Users/Lenovo/Documents/programming/android/Mommylicious/app/src/main/res/layout/item_menu.xml" value="0.19293478260869565" />
         <entry key="..\:/Users/Lenovo/programming/android/Mommylicious/app/src/main/res/drawable/gradient_blue.xml" value="0.25" />
         <entry key="..\:/Users/Lenovo/programming/android/Mommylicious/app/src/main/res/drawable/gradient_card.xml" value="0.25277777777777777" />
         <entry key="..\:/Users/Lenovo/programming/android/Mommylicious/app/src/main/res/drawable/gradient_purple.xml" value="0.25" />
@@ -34,6 +19,7 @@
         <entry key="..\:/Users/Lenovo/programming/android/Mommylicious/app/src/main/res/drawable/stroke_color.xml" value="0.25" />
         <entry key="..\:/Users/Lenovo/programming/android/Mommylicious/app/src/main/res/layout/activity_add_child.xml" value="0.25" />
         <entry key="..\:/Users/Lenovo/programming/android/Mommylicious/app/src/main/res/layout/activity_add_record.xml" value="0.2" />
+        <entry key="..\:/Users/Lenovo/programming/android/Mommylicious/app/src/main/res/layout/activity_detail_child.xml" value="0.264" />
         <entry key="..\:/Users/Lenovo/programming/android/Mommylicious/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/Lenovo/programming/android/Mommylicious/app/src/main/res/layout/activity_main.xml" value="0.12158054711246201" />
         <entry key="..\:/Users/Lenovo/programming/android/Mommylicious/app/src/main/res/layout/activity_register.xml" value="0.25" />

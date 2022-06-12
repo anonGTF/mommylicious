@@ -2,6 +2,7 @@ package com.mommylicious.mobile.data.firebase
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import com.google.firebase.storage.FirebaseStorage
 import com.mommylicious.mobile.data.model.Child
 import com.mommylicious.mobile.data.model.Child.Companion.toChild
@@ -40,6 +41,15 @@ class ChildRepository @Inject constructor(
         firebaseCall = { db.collection(FirebaseConstants.USER_COLLECTION).document(getUserId())
             .collection(FirebaseConstants.CHILD_COLLECTION).document(id)
             .get().await().toChild()
+        }
+    )
+
+    suspend fun getYoungestChild() = safeCallFirebase(
+        firebaseCall = {
+            db.collection(FirebaseConstants.USER_COLLECTION).document(getUserId())
+                .collection(FirebaseConstants.CHILD_COLLECTION)
+                .orderBy("birthDate", Query.Direction.DESCENDING).limit(1)
+                .get().await().mapNotNull { it.toChild() }
         }
     )
 

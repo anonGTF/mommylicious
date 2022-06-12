@@ -7,6 +7,9 @@ object FirebaseConstants {
     const val USER_COLLECTION = "users"
     const val CHILD_COLLECTION = "children"
     const val RECORD_COLLECTION = "records"
+    const val ARTICLE_COLLECTION = "articles"
+    const val MENU_COLLECTION = "menus"
+    const val NEED_COLLECTION = "needs"
 
     const val KEY_ID = "id"
     const val KEY_EMAIL = "email"

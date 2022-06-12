@@ -4,11 +4,12 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.mommylicious.mobile.base.BaseFragment
-import com.mommylicious.mobile.data.model.Child
+import com.mommylicious.mobile.data.model.*
 import com.mommylicious.mobile.data.model.Child.Companion.getAge
-import com.mommylicious.mobile.data.model.Record
 import com.mommylicious.mobile.databinding.FragmentHomeBinding
+import com.mommylicious.mobile.ui.article.DetailArticleActivity
 import com.mommylicious.mobile.ui.record.AddRecordActivity
 import com.mommylicious.mobile.utils.getTimeLapse
 import com.mommylicious.mobile.utils.orNow
@@ -20,12 +21,43 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentHomeBinding =
         FragmentHomeBinding::inflate
 
+    private lateinit var articleAdapter: ArticleAdapter
+    private lateinit var needAdapter: NeedAdapter
+    private lateinit var menuAdapter: MenuAdapter
     private val viewModel: HomeViewModel by activityViewModels()
 
     override fun setup() {
         setupListener()
+        setupRecyclerView()
         viewModel.getChild().observe(viewLifecycleOwner, setChildObserver())
         viewModel.getLatestRecord().observe(viewLifecycleOwner, setRecordObserver())
+        viewModel.getArticles().observe(viewLifecycleOwner, setArticleObserver())
+        viewModel.getNeed().observe(viewLifecycleOwner, setNeedObserver())
+        viewModel.getMenu().observe(viewLifecycleOwner, setMenuObserver())
+    }
+
+    private fun setupRecyclerView() {
+        articleAdapter = ArticleAdapter()
+        with(binding.rvArticle) {
+            adapter = articleAdapter
+            layoutManager = LinearLayoutManager(binding.root.context)
+        }
+
+        articleAdapter.setOnItemClickListener {
+            DetailArticleActivity.startActivity(requireActivity(), it.link)
+        }
+
+        needAdapter = NeedAdapter()
+        with(binding.rvNeed) {
+            adapter = needAdapter
+            layoutManager = LinearLayoutManager(binding.root.context)
+        }
+
+        menuAdapter = MenuAdapter()
+        with(binding.rvMenu) {
+            adapter = menuAdapter
+            layoutManager = LinearLayoutManager(binding.root.context)
+        }
     }
 
     private fun setupListener() {
@@ -33,6 +65,24 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             startActivity(Intent(binding.root.context, AddRecordActivity::class.java))
         }
     }
+
+    private fun setArticleObserver() = setObserver<List<Article>?>(
+        onSuccess = {
+            articleAdapter.differ.submitList(it.data)
+        }
+    )
+
+    private fun setNeedObserver() = setObserver<List<Need>?>(
+        onSuccess = {
+            needAdapter.differ.submitList(it.data)
+        }
+    )
+
+    private fun setMenuObserver() = setObserver<List<Menu>?>(
+        onSuccess = {
+            menuAdapter.differ.submitList(it.data)
+        }
+    )
 
     private fun setChildObserver() = setObserver<Child?>(
         onSuccess = {
@@ -42,7 +92,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private fun setRecordObserver() = setObserver<List<Record>?>(
         onSuccess = {
-            if (it.data?.size ?: 0 > 0) {
+            if ((it.data?.size ?: 0) > 0) {
                 populateRecordInfo(it.data?.get(0))
             }
         }

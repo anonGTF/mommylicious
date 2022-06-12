@@ -2,6 +2,7 @@ package com.mommylicious.mobile.ui.profile
 
 import android.net.Uri
 import com.mommylicious.mobile.base.BaseViewModel
+import com.mommylicious.mobile.data.firebase.ChildRepository
 import com.mommylicious.mobile.data.firebase.UserRepository
 import com.mommylicious.mobile.data.model.User
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -9,7 +10,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
-    private val userRepository: UserRepository
+    private val userRepository: UserRepository,
+    private val childRepository: ChildRepository
 ) : BaseViewModel() {
     fun getUserEmail() = userRepository.getUserEmail()
 
@@ -30,6 +32,10 @@ class ProfileViewModel @Inject constructor(
 //            userRepository.saveProfile(user)
 //        }
 //    )
+
+    fun getChildren() = callApiReturnLiveData(
+        apiCall = { childRepository.getChildren() }
+    )
 
     fun logout() = callApiReturnLiveData(
         apiCall = { userRepository.logout() }

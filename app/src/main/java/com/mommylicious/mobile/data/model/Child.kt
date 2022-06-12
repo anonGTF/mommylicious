@@ -4,6 +4,7 @@ import android.os.Parcelable
 import android.util.Log
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.firestore.DocumentSnapshot
+import com.mommylicious.mobile.base.BaseModel
 import com.mommylicious.mobile.utils.getTimeLapse
 import com.mommylicious.mobile.utils.orNow
 import com.mommylicious.mobile.utils.toDate
@@ -15,7 +16,7 @@ data class Child(val childId: String,
                  val birthDate: String,
                  val gender: String,
                  val weekOfBirth: Int,
-                 val imageUrl: String) : Parcelable {
+                 val imageUrl: String) : BaseModel(childId), Parcelable {
 
     companion object {
         fun DocumentSnapshot.toChild(): Child? {

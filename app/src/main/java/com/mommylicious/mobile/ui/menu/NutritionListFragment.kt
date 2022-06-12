@@ -1,4 +1,4 @@
-package com.mommylicious.mobile.ui.nutrition
+package com.mommylicious.mobile.ui.menu
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

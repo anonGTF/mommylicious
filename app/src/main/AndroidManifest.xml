@@ -13,10 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mommylicious">
         <activity
+            android:name=".ui.article.DetailArticleActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.achievement.AchievementListActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.nutrition.DetailMenuActivity"
+            android:name=".ui.menu.DetailMenuActivity"
             android:exported="false" />
         <activity
             android:name=".ui.child.DetailChildActivity"

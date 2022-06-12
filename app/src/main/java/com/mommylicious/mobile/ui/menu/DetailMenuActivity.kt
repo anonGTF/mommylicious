@@ -1,4 +1,4 @@
-package com.mommylicious.mobile.ui.nutrition
+package com.mommylicious.mobile.ui.menu
 
 import android.view.LayoutInflater
 import com.mommylicious.mobile.base.BaseActivity

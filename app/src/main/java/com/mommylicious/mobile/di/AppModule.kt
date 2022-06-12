@@ -4,9 +4,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
-import com.mommylicious.mobile.data.firebase.ChildRepository
-import com.mommylicious.mobile.data.firebase.RecordRepository
-import com.mommylicious.mobile.data.firebase.UserRepository
+import com.mommylicious.mobile.data.firebase.*
 import com.mommylicious.mobile.data.preferences.Preferences
 import dagger.Module
 import dagger.Provides
@@ -63,4 +61,22 @@ object AppModule {
         storage: FirebaseStorage,
         pref: Preferences
     ): RecordRepository = RecordRepository(auth, db, storage, pref)
+
+    @Provides
+    @Singleton
+    fun provideArticleRepository(
+        db: FirebaseFirestore
+    ): ArticleRepository = ArticleRepository(db)
+
+    @Provides
+    @Singleton
+    fun provideMenuRepository(
+        db: FirebaseFirestore
+    ): MenuRepository = MenuRepository(db)
+
+    @Provides
+    @Singleton
+    fun provideNeedRepository(
+        db: FirebaseFirestore
+    ): NeedRepository = NeedRepository(db)
 }

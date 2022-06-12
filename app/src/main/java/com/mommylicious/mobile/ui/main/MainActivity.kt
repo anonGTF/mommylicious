@@ -6,7 +6,7 @@ import com.mommylicious.mobile.R
 import com.mommylicious.mobile.base.BaseActivity
 import com.mommylicious.mobile.databinding.ActivityMainBinding
 import com.mommylicious.mobile.ui.home.HomeFragment
-import com.mommylicious.mobile.ui.nutrition.NutritionListFragment
+import com.mommylicious.mobile.ui.menu.NutritionListFragment
 import com.mommylicious.mobile.ui.profile.ProfileFragment
 import dagger.hilt.android.AndroidEntryPoint
 
