@@ -4,4 +4,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profil">Profil</string>
     <string name="back_button">back_button</string>
+    <string name="menu_1">Makan Pagi</string>
+    <string name="menu_2">Makan Siang</string>
+    <string name="menu_3">Makan Malam</string>
+    <string name="record_1">Tinggi</string>
+    <string name="record_2">Berat</string>
+    <string name="record_3">Lingkar Kepala</string>
 </resources>

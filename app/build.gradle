@@ -54,6 +54,11 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'io.github.h07000223:flycoTabLayout:3.0.0'
+    implementation 'com.github.AAChartModel:AAChartCore-Kotlin:-SNAPSHOT'
+    implementation("com.github.worker8:AccordionView:1.0.6") {
+        exclude group: 'com.android.support'
+    }
 
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'

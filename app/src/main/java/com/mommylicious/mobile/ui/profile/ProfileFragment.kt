@@ -18,6 +18,7 @@ import com.mommylicious.mobile.databinding.FragmentProfileBinding
 import com.mommylicious.mobile.ui.auth.LoginActivity
 import com.mommylicious.mobile.ui.child.AddChildActivity
 import com.mommylicious.mobile.ui.child.DetailChildActivity
+import com.mommylicious.mobile.ui.market.MarketActivity
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -48,6 +49,10 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding>() {
 
         binding.btnLogout.setOnClickListener {
             viewModel.logout().observe(viewLifecycleOwner, setLogoutObserver())
+        }
+
+        binding.btnTukar.setOnClickListener {
+            startActivity(Intent(binding.root.context, MarketActivity::class.java))
         }
     }
 

@@ -15,4 +15,9 @@ class MenuRepository @Inject constructor(
             .get().await().mapNotNull { it.toMenu() } }
     )
 
+    suspend fun getMenuByType(type: String) = safeCallFirebase(
+        firebaseCall = { db.collection(FirebaseConstants.MENU_COLLECTION)
+            .whereEqualTo("type", type).get().await().mapNotNull { it.toMenu() } }
+    )
+
 }

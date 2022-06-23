@@ -1,6 +1,5 @@
 package com.mommylicious.mobile.ui.home
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
@@ -9,8 +8,11 @@ import com.mommylicious.mobile.base.BaseFragment
 import com.mommylicious.mobile.data.model.*
 import com.mommylicious.mobile.data.model.Child.Companion.getAge
 import com.mommylicious.mobile.databinding.FragmentHomeBinding
+import com.mommylicious.mobile.ui.achievement.AchievementListActivity
+import com.mommylicious.mobile.ui.achievement.PointActivity
 import com.mommylicious.mobile.ui.article.DetailArticleActivity
 import com.mommylicious.mobile.ui.record.AddRecordActivity
+import com.mommylicious.mobile.ui.record.RecordActivity
 import com.mommylicious.mobile.utils.getTimeLapse
 import com.mommylicious.mobile.utils.orNow
 import com.squareup.picasso.Picasso
@@ -25,9 +27,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private lateinit var needAdapter: NeedAdapter
     private lateinit var menuAdapter: MenuAdapter
     private val viewModel: HomeViewModel by activityViewModels()
+    private var child: Child? = null
 
     override fun setup() {
-        setupListener()
         setupRecyclerView()
         viewModel.getChild().observe(viewLifecycleOwner, setChildObserver())
         viewModel.getLatestRecord().observe(viewLifecycleOwner, setRecordObserver())
@@ -62,7 +64,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private fun setupListener() {
         binding.fabAddRecord.setOnClickListener {
-            startActivity(Intent(binding.root.context, AddRecordActivity::class.java))
+            AddRecordActivity.startActivity(binding.root.context)
+        }
+
+        binding.cardRecord.setOnClickListener {
+            RecordActivity.startActivity(binding.root.context, child?.name.orEmpty(), child?.gender.orEmpty())
+        }
+
+        binding.btnAchievement.setOnClickListener {
+            PointActivity.startActivity(binding.root.context)
         }
     }
 
@@ -86,7 +96,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private fun setChildObserver() = setObserver<Child?>(
         onSuccess = {
+            child = it.data
             populateChildInfo(it.data)
+            setupListener()
         }
     )
 

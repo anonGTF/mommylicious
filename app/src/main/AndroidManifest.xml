@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mommylicious">
         <activity
+            android:name=".ui.market.MarketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.achievement.PointActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.record.RecordActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.article.DetailArticleActivity"
             android:exported="false" />
         <activity

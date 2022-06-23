@@ -1,6 +1,7 @@
 package com.mommylicious.mobile.ui.record
 
 import android.app.DatePickerDialog
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import androidx.activity.viewModels
@@ -76,4 +77,10 @@ class AddRecordActivity : BaseActivity<ActivityAddRecordBinding>() {
             startActivity(Intent(this, MainActivity::class.java))
         }
     )
+
+    companion object {
+        fun startActivity(ctx: Context) {
+            ctx.startActivity(Intent(ctx, AddRecordActivity::class.java))
+        }
+    }
 }

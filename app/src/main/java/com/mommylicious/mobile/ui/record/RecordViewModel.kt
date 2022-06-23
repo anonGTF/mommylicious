@@ -19,4 +19,8 @@ class RecordViewModel @Inject constructor(
                 date.toDate().orNow()))
         }
     )
+
+    fun getAllRecords() = callApiReturnLiveData(
+        apiCall = { recordRepository.getRecords() }
+    )
 }

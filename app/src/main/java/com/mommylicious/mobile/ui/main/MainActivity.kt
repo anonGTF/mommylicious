@@ -6,7 +6,7 @@ import com.mommylicious.mobile.R
 import com.mommylicious.mobile.base.BaseActivity
 import com.mommylicious.mobile.databinding.ActivityMainBinding
 import com.mommylicious.mobile.ui.home.HomeFragment
-import com.mommylicious.mobile.ui.menu.NutritionListFragment
+import com.mommylicious.mobile.ui.menu.MenuFragment
 import com.mommylicious.mobile.ui.profile.ProfileFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -17,7 +17,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         = ActivityMainBinding::inflate
     private var shouldGoTo: Int = 0
     private val homeFragment = HomeFragment()
-    private val nutritionListFragment = NutritionListFragment()
+    private val menuFragment = MenuFragment()
     private val profileFragment = ProfileFragment()
 
     override fun setup() {
@@ -27,7 +27,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.miHome -> setCurrentFragment(homeFragment)
-                R.id.miNutrition -> setCurrentFragment(nutritionListFragment)
+                R.id.miNutrition -> setCurrentFragment(menuFragment)
                 R.id.miProfile -> setCurrentFragment(profileFragment)
             }
             true
